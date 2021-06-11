@@ -1,0 +1,20 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    url: jdbc:mysql://104.197.37.236:3306/LibraryDatabase
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: digihome-app
+    password: Sam_12345
+  jpa:
+    hibernate:
+      dialect: org.hibernate.dialect.MySQL57Dialect
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      hbm2ddl.auto: none
+      temp.use_jdbc_metadata_defaults: false
+
+server:
+  port: 8082
