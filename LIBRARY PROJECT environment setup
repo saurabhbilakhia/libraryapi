@@ -1,0 +1,13 @@
+LIBRARY PROJECT Environment setup
+
+1. DATABASE:
+    https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-20-04
+    CREATE USER 'svc_jsotlibrary'@'%' IDENTIFIED BY 'Sam_12345';
+    GRANT ALL ON *.* TO 'svc_jsotlibrary'@'%';
+    NOTE: Remove line 'bind-address 127.0.0.1' from '/etc/mysql/mysql.conf.d/mysqld.cnf'
+    sudo service mysql restart
+
+2. API:
+    sudo apt install openjdk-11-jdk
+
+3. UI:

@@ -28,6 +28,7 @@ class SecurityConfig(val objectMapper: ObjectMapper
         http
             .cors().and().csrf().disable().authorizeRequests()
             .antMatchers(HttpMethod.POST, "/books/**").permitAll() // TODO: remove this line
+            .antMatchers(HttpMethod.GET, "/books/**").permitAll() // TODO: remove this line
             .antMatchers(HttpMethod.POST, "/user/**").permitAll() // TODO: remove this line
             .anyRequest().authenticated()
             .and()

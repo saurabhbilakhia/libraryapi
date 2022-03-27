@@ -1,6 +1,7 @@
 package com.digihome.library.api.database.entity
 
 import org.springframework.data.jpa.repository.JpaRepository
+import java.time.LocalDateTime
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
@@ -25,7 +26,14 @@ class BooksEntity (
 
     var location: String = "",
 
-    var numberOfCopies: Int = 0
+    var numberOfCopies: Int = 0,
+
+    var createdDateTime: LocalDateTime = LocalDateTime.now(),
+
+    var lastUpdatedDateTime: LocalDateTime = LocalDateTime.now()
 )
 
-interface BooksRepository : JpaRepository<BooksEntity, String>
+interface BooksRepository : JpaRepository<BooksEntity, String> {
+    fun findAllByOrderByCreatedDateTimeAsc() : List<BooksEntity>?
+    fun findByLanguageOrderByBookNameAsc(language: String) : List<BooksEntity>?
+}

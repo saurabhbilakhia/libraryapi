@@ -17,3 +17,8 @@ data class BookIssueModel (
     var userId: String = "",
     var bookId: String = ""
 )
+
+data class BookFilterModel (
+    var language: String = "",
+    var page: Int
+)

@@ -6,5 +6,6 @@ package com.digihome.library.api.models
 
 data class ServiceResponseModel (
     val success: Boolean,
-    val message: String
+    val message: String,
+    val data: Any? = null
 )
