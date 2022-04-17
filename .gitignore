@@ -1,1 +1,13 @@
+target/
 .idea
+.eclipse
+*.properties
+*.yml
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
+HELP.md
+
