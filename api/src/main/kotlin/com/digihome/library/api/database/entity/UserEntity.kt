@@ -1,6 +1,7 @@
 package com.digihome.library.api.database.entity
 
 import org.springframework.data.jpa.repository.JpaRepository
+import java.time.LocalDateTime
 import javax.persistence.Entity
 import javax.persistence.Id
 import javax.persistence.Table
@@ -23,7 +24,13 @@ class UserEntity (
 
     var phoneNumber: String = "",
 
-    var emailId: String? = ""
+    var emailId: String? = "",
+
+    var createdBy: String = "",
+
+    var createdDateTime: LocalDateTime = LocalDateTime.now(),
+
+    var lastUpdatedDateTime: LocalDateTime = LocalDateTime.now()
 )
 
 interface UserRepository : JpaRepository<UserEntity, String> {

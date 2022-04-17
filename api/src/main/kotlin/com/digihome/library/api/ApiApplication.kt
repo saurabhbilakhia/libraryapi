@@ -1,6 +1,5 @@
 package com.digihome.library.api
 
-import ch.qos.logback.classic.pattern.MessageConverter
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.databind.SerializationFeature
@@ -11,10 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
 import org.springframework.context.annotation.Bean
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
-import org.springframework.http.MediaType
 import org.springframework.http.converter.ByteArrayHttpMessageConverter
 import org.springframework.http.converter.HttpMessageConverter
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
 import org.springframework.web.client.RestTemplate
 import java.text.SimpleDateFormat
 import java.util.*
@@ -49,13 +46,6 @@ class ApiApplication {
 	fun byteArrayHttpMessageConverter(): ByteArrayHttpMessageConverter? {
 		return ByteArrayHttpMessageConverter()
 	}
-
-//	@Bean
-//	fun byteArrayHttpMessageConverter(): MappingJackson2HttpMessageConverter? {
-//		return MappingJackson2HttpMessageConverter().apply {
-//			supportedMediaTypes = Collections.singletonList(MediaType.ALL)
-//		}
-//	}
 }
 
 fun main(args: Array<String>) {

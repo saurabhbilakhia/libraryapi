@@ -20,3 +20,10 @@ qrcode-url: https://api.qrserver.com/v1/create-qr-code/?size=200x200&data={qrCod
 
 server:
   port: 8082
+
+jwt:
+  url: /login
+  header: Authorization
+  prefix: "Bearer "
+  expiration: 60000000
+  secret: jwtsecrettoken

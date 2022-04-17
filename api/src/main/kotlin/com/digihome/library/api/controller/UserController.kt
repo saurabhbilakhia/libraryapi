@@ -37,5 +37,4 @@ class UserController (val userDbService: UserDbService) {
             ResponseEntity(ResponseModel(success = false, message = e.message.toString(), code = HttpStatus.INTERNAL_SERVER_ERROR.value()), HttpStatus.INTERNAL_SERVER_ERROR)
         }
     }
-
 }
