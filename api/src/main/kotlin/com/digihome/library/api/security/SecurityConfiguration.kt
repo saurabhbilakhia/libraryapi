@@ -37,9 +37,11 @@ class SecurityConfig(val libraryUserDetailService: LibraryUserDetailService,
         http
             .cors().and().csrf().disable().authorizeRequests()
             .antMatchers(HttpMethod.POST, jwtConfig.url).permitAll()
-            .antMatchers(HttpMethod.POST, "/user/add").permitAll()
-            .antMatchers(HttpMethod.POST, "/user/resetPassword").permitAll()
-            .antMatchers(HttpMethod.POST, "/user/forgotPassword").permitAll()
+            .antMatchers(HttpMethod.POST, "/user/**").permitAll()
+            .antMatchers(HttpMethod.POST, "/books/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/user/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/books/**").permitAll()
+            .antMatchers(HttpMethod.POST, "/**").permitAll()
             .antMatchers(HttpMethod.POST, "/test/**").permitAll() // TODO: remove this line
             .anyRequest().authenticated()
             .and()

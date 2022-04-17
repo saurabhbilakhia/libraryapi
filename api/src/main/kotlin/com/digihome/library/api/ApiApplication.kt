@@ -12,6 +12,7 @@ import org.springframework.context.annotation.Bean
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories
 import org.springframework.http.converter.ByteArrayHttpMessageConverter
 import org.springframework.http.converter.HttpMessageConverter
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.web.client.RestTemplate
 import java.text.SimpleDateFormat
 import java.util.*
@@ -46,6 +47,9 @@ class ApiApplication {
 	fun byteArrayHttpMessageConverter(): ByteArrayHttpMessageConverter? {
 		return ByteArrayHttpMessageConverter()
 	}
+
+	@Bean
+	fun passwordEncoder() = BCryptPasswordEncoder(9)
 }
 
 fun main(args: Array<String>) {
